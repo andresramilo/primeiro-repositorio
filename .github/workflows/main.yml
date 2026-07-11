@@ -19,7 +19,18 @@ jobs:
          variavel = "Hello World"
          print(variavel)
        shell: python  
-
+ segundo-job:  
+   name: "Segundo Job"
+   runs-on: ubuntu-latest
+   steps:
+     - name: "Verificação da versão do Node JS atual"
+       run: node --version
+     - name: "Definição da versão 20.13.1 do NodeJS"
+       uses: actions/setup-node@v4 
+       with:
+         node-version: '20.13.1'
+     - name: "Verificação da versão do Node depois da execução da Action"
+       run: node --version    
 
 
 
